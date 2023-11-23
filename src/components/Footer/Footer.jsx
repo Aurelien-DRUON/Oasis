@@ -12,10 +12,10 @@ const Container = styled.div`
 function Footer() {
   return (
     <Container>
-      <text>Évènements</text>
-      <text>Contact</text>
-      <text>Mentions légales</text>
-      <text>Conditions générales d&apos;utilisation</text>
+      <span>Évènements</span>
+      <span>Contact</span>
+      <span>Mentions légales</span>
+      <span>Conditions générales d&apos;utilisation</span>
     </Container>
   );
 }
