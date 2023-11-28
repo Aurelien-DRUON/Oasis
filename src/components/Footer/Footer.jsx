@@ -7,6 +7,7 @@ const Container = styled.div`
   gap: 16px;
   align-self: stretch;
   background: #3781a5;
+  font-family: Arial, Helvetica, sans-serif;
 `;
 
 function Footer() {

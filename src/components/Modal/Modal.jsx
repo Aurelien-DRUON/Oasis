@@ -7,7 +7,7 @@ const Container = styled.div`
   justify-content: center;
   align-items: center;
   height: 20px;
-  padding: 16px 32px 16px 16px;
+  padding: 8px 16px 8px 8px;
   font-family: Arial, Helvetica, sans-serif;
   border-radius: 0px 8px 8px 0px;
   border-top: 2px solid #3781a5;

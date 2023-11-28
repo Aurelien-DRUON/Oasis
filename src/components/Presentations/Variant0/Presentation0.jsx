@@ -1,4 +1,4 @@
-import Image from "./Image";
+import Image from "../Image";
 import styled from "styled-components";
 import PropTypes from "prop-types";
 
@@ -19,12 +19,12 @@ const ContainerText = styled.div`
   padding: 8px;
 `;
 
-Presentation.propTypes = {
+Presentation0.propTypes = {
   img: PropTypes.string.isRequired,
   children: PropTypes.string.isRequired,
 };
 
-function Presentation({ img: src, children: text }) {
+function Presentation0({ img: src, children: text }) {
   return (
     <Container>
       <Image>{src}</Image>
@@ -33,4 +33,4 @@ function Presentation({ img: src, children: text }) {
   );
 }
 
-export default Presentation;
+export default Presentation0;
