@@ -32,6 +32,10 @@ const TabsUI = styled.div`
   gap: 40px;
 `;
 
+const SpanUI = styled.span`
+  color: #fff;
+`;
+
 const AccountUI = styled.div`
   display: flex;
   flex-direction: row;
@@ -44,17 +48,17 @@ const AccountUI = styled.div`
 function Header() {
   return (
     <HeaderUI>
-      <Link to="/">
+      <Link to="/" style={{ textDecoration: "none" }}>
         <LogoUI>Oasis</LogoUI>
       </Link>
       <TabsUI>
-        <Link to="/search">
-          <span>Où partir ?</span>
+        <Link to="/search" style={{ textDecoration: "none" }}>
+          <SpanUI>Où partir ?</SpanUI>
         </Link>
-        <span>Hôtels</span>
-        <span>Itinéraires</span>
-        <span>Activités</span>
-        <span>Réservation</span>
+        <SpanUI>Hôtels</SpanUI>
+        <SpanUI>Itinéraires</SpanUI>
+        <SpanUI>Activités</SpanUI>
+        <SpanUI>Réservation</SpanUI>
       </TabsUI>
       <AccountUI>
         <div>Mon Compte</div>
