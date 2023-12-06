@@ -13,7 +13,7 @@ const Container = styled.div`
   border-top: 2px solid #3781a5;
   border-right: 2px solid #3781a5;
   border-bottom: 2px solid #3781a5;
-  background: url("https://source.unsplash.com/random/200x1080");
+  background: url("https://source.unsplash.com/random/200x750");
 `;
 
 Modal.propTypes = {

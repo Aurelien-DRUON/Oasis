@@ -1,10 +1,10 @@
 import styled from "styled-components";
-import Header from "../components/Header";
-import Ad from "../components/Ad";
-import Presentation0 from "../components/Presentations/Variant0/Presentation0";
-import Presentation1 from "../components/Presentations/Variant1/Presentation1";
-import Modal from "../components/Modal/Modal";
-import Footer from "../components/Footer";
+import Header from "../../components/Header";
+import Ad from "../../components/Ad";
+import Presentation0 from "../../components/Presentations/Variant0/Presentation0";
+import Presentation1 from "../../components/Presentations/Variant1/Presentation1";
+import Modal from "../../components/Modal/Modal";
+import Footer from "../../components/Footer";
 
 const Container = styled.div`
   display: flex;

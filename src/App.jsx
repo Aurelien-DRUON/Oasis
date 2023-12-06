@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import HomeScreen from "./screens/HomeScreen";
+import Searchscreen from "./screens/Searchscreen/Searchscreen";
 
 const Container = styled.div`
   display: flex;
@@ -11,7 +11,7 @@ const Container = styled.div`
 function App() {
   return (
     <Container>
-      <HomeScreen></HomeScreen>
+      <Searchscreen></Searchscreen>
     </Container>
   );
 }

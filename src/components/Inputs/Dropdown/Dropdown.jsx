@@ -10,13 +10,14 @@ const SelectUI = styled.select`
 `;
 
 Dropdown.propTypes = {
-  children: PropTypes.string.isRequired,
-  options: PropTypes.arrayOf(PropTypes.string).isRequired,
+  children: PropTypes.arrayOf(PropTypes.string).isRequired,
+  title: PropTypes.string.isRequired,
+  defaultValue: PropTypes.string,
 };
 
-function Dropdown({ children: title, options }) {
+function Dropdown({ children: options, title, defaultValue }) {
   return (
-    <SelectUI defaultValue={title}>
+    <SelectUI defaultValue={defaultValue || title}>
       <option>{title}</option>
       {options.map((option, index) => (
         <option key={index}>{option}</option>
