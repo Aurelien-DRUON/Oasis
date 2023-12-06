@@ -58,7 +58,7 @@ function Header() {
         <SpanUI>Hôtels</SpanUI>
         <SpanUI>Itinéraires</SpanUI>
         <SpanUI>Activités</SpanUI>
-        <SpanUI>Réservation</SpanUI>
+        <SpanUI>Réservations</SpanUI>
       </TabsUI>
       <AccountUI>
         <div>Mon Compte</div>

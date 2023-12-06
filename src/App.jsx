@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
-import Homescreen from "./screens/Homescreen/Homescreen";
-import Searchscreen from "./screens/Searchscreen/Searchscreen";
+import Homescreen from "./pages/Homescreen/Homescreen";
+import Searchscreen from "./pages/Searchscreen/Searchscreen";
 
 function App() {
   return (
