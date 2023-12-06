@@ -36,6 +36,12 @@ const SpanUI = styled.span`
   color: #fff;
 `;
 
+const MiddleBar = styled.div`
+  width: 1px;
+  height: 60px;
+  background: #ffffff;
+`;
+
 const AccountUI = styled.div`
   display: flex;
   flex-direction: row;
@@ -55,13 +61,20 @@ function Header() {
         <Link to="/search" style={{ textDecoration: "none" }}>
           <SpanUI>Où partir ?</SpanUI>
         </Link>
+        <MiddleBar />
         <SpanUI>Hôtels</SpanUI>
+        <MiddleBar />
         <SpanUI>Itinéraires</SpanUI>
+        <MiddleBar />
         <SpanUI>Activités</SpanUI>
+        <MiddleBar />
         <SpanUI>Réservations</SpanUI>
+        <MiddleBar />
       </TabsUI>
       <AccountUI>
-        <div>Mon Compte</div>
+        <Link to="/account" style={{ textDecoration: "none" }}>
+          <SpanUI>Mon Compte</SpanUI>
+        </Link>
         <img src="src/assets/images/icons/user.svg" />
       </AccountUI>
     </HeaderUI>
