@@ -13,11 +13,12 @@ Dropdown.propTypes = {
   children: PropTypes.arrayOf(PropTypes.string).isRequired,
   title: PropTypes.string.isRequired,
   defaultValue: PropTypes.string,
+  onChange: PropTypes.func,
 };
 
-function Dropdown({ children: options, title, defaultValue }) {
+function Dropdown({ children: options, title, defaultValue, onChange }) {
   return (
-    <SelectUI defaultValue={defaultValue || title}>
+    <SelectUI onChange={onChange} defaultValue={defaultValue || title}>
       <option>{title}</option>
       {options.map((option, index) => (
         <option key={index}>{option}</option>

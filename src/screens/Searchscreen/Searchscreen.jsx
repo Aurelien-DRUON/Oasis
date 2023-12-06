@@ -73,16 +73,11 @@ function Searchscreen() {
   const [selectedCountry, setSelectedCountry] = useState("Pays");
   const [filteredCountries, setFilteredCountries] = useState(countries);
 
-  const handleChangeCountry = useCallback(
-    (e) => {
-      setSelectedCountry(e.target.value);
-      const filtered = countries.filter(
-        (country) => country === selectedCountry
-      );
-      setFilteredCountries(filtered);
-    },
-    [selectedCountry]
-  );
+  const handleChangeCountry = useCallback((e) => {
+    setSelectedCountry(e.target.value);
+    const filtered = countries.filter((country) => country === e.target.value);
+    setFilteredCountries(filtered);
+  }, []);
 
   return (
     <Container>
@@ -101,9 +96,23 @@ function Searchscreen() {
             <Dropdown title="Ville">{cities}</Dropdown>
           </Searchbars>
         </SearchUI>
-        {filteredCountries.map((country, index) => (
-          <Searchrow key={index} country={country} date="Jamais" price="1€" />
-        ))}
+        {selectedCountry === "Pays"
+          ? countries.map((country, index) => (
+              <Searchrow
+                key={index}
+                country={country}
+                date="Jamais"
+                price="1€"
+              />
+            ))
+          : filteredCountries.map((country, index) => (
+              <Searchrow
+                key={index}
+                country={country}
+                date="Jamais"
+                price="1€"
+              />
+            ))}
       </BodyUI>
       <Footer />
     </Container>
