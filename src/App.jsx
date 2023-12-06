@@ -1,18 +1,16 @@
-import styled from "styled-components";
-import Searchscreen from "./screens/Searchscreen/Searchscreen";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
-const Container = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: 0px;
-`;
+import Homescreen from "./screens/Homescreen/Homescreen";
+import Searchscreen from "./screens/Searchscreen/Searchscreen";
 
 function App() {
   return (
-    <Container>
-      <Searchscreen></Searchscreen>
-    </Container>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Homescreen />} />
+        <Route path="/search" element={<Searchscreen />} />
+      </Routes>
+    </Router>
   );
 }
 

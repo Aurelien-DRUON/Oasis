@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 const HeaderUI = styled.div`
   display: flex;
@@ -43,9 +44,13 @@ const AccountUI = styled.div`
 function Header() {
   return (
     <HeaderUI>
-      <LogoUI>Oasis</LogoUI>
+      <Link to="/">
+        <LogoUI>Oasis</LogoUI>
+      </Link>
       <TabsUI>
-        <span>Où partir ?</span>
+        <Link to="/search">
+          <span>Où partir ?</span>
+        </Link>
         <span>Hôtels</span>
         <span>Itinéraires</span>
         <span>Activités</span>
