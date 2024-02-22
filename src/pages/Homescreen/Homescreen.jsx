@@ -1,10 +1,9 @@
 import styled from "styled-components";
-import Header from "../../components/Header";
 import Ad from "../../components/Ad";
 import Presentation0 from "../../components/Presentations/Variant0/Presentation0";
 import Presentation1 from "../../components/Presentations/Variant1/Presentation1";
 import Modal from "../../components/Modal/Modal";
-import Footer from "../../components/Footer";
+import { Link } from "react-router-dom";
 
 const Container = styled.div`
   display: flex;
@@ -60,46 +59,28 @@ const Infos = styled.div`
 function Homescreen() {
   return (
     <Container>
-      <Header />
       <Ad>Bons plans ! -50% pour tous les voyages en Syrie</Ad>
       <Row>
-        <Presentation0 img="https://source.unsplash.com/random/240x128">
-          La
-        </Presentation0>
-        <Presentation0 img="https://source.unsplash.com/random/240x128">
-          loser
-        </Presentation0>
-        <Presentation0 img="https://source.unsplash.com/random/240x128">
-          queue
-        </Presentation0>
-        <Presentation0 img="https://source.unsplash.com/random/240x128">
-          est
-        </Presentation0>
-      </Row>
-      <Row>
-        <Presentation0 img="https://source.unsplash.com/random/240x128">
-          réelle
-        </Presentation0>
-        <Presentation0 img="https://source.unsplash.com/random/240x128">
-          !
-        </Presentation0>
-        <Presentation0 img="https://source.unsplash.com/random/240x128">
-          Vous
-        </Presentation0>
-      </Row>
-      <Row>
-        <Presentation0 img="https://source.unsplash.com/random/240x128">
-          êtes
-        </Presentation0>
-        <Presentation0 img="https://source.unsplash.com/random/240x128">
-          full
-        </Presentation0>
-        <Presentation0 img="https://source.unsplash.com/random/240x128">
-          délus
-        </Presentation0>
-        <Presentation0 img="https://source.unsplash.com/random/240x128">
-          .
-        </Presentation0>
+        <Link to="/details/paris">
+          <Presentation0 img="https://source.unsplash.com/random/240x128">
+            Paris
+          </Presentation0>
+        </Link>
+        <Link to="/details/london">
+          <Presentation0 img="https://source.unsplash.com/random/240x128">
+            Londres
+          </Presentation0>
+        </Link>
+        <Link to="/details/madrid">
+          <Presentation0 img="https://source.unsplash.com/random/240x128">
+            Madrid
+          </Presentation0>
+        </Link>
+        <Link to="/details/berlin">
+          <Presentation0 img="https://source.unsplash.com/random/240x128">
+            Berlin
+          </Presentation0>
+        </Link>
       </Row>
       <FlexColumn>
         <TitleUI>Actualités</TitleUI>
@@ -119,7 +100,6 @@ function Homescreen() {
         </Modal>
         <Modal>Nouvel hôtel Rosewood ouvert à Thonon-les-bains</Modal>
       </Infos>
-      <Footer />
     </Container>
   );
 }

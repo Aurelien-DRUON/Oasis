@@ -7,7 +7,12 @@ const Container = styled.div`
   flex-direction: column;
   justify-content: flex-end;
   align-items: flex-start;
+  transition: transform 0.3s ease-in-out;
+  &:hover {
+    transform: scale(1.1);
+  }
 `;
+
 const ContainerText = styled.div`
   position: absolute;
   color: #fff;

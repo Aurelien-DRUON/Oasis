@@ -1,6 +1,4 @@
 import styled from "styled-components";
-import Header from "../../components/Header";
-import Footer from "../../components/Footer";
 import Date from "../../components/Inputs/Date/Date";
 import Dropdown from "../../components/Inputs/Dropdown";
 import Searchrow from "../../components/Rows/SearchRow/Searchrow";
@@ -47,41 +45,50 @@ const Searchbars = styled.div`
   background: #f8f8f8;
 `;
 
-const countries = [
-  "France",
-  "Angleterre",
-  "Espagne",
-  "Allemagne",
-  "Danemark",
-  "Italie",
-  "Pologne",
-  "Suisse",
-];
-
-const cities = [
-  "Paris",
-  "Londres",
-  "Madrid",
-  "Berlin",
-  "Amsterdam",
-  "Rome",
-  "Varsovie",
-  "Berne",
+const destinations = [
+  { pays: "France", name: "Paris", price: "100€", date: "15 août 2022" },
+  {
+    pays: "Angleterre",
+    name: "Londres",
+    price: "150€",
+    date: "10 septembre 2022",
+  },
+  { pays: "Espagne", name: "Madrid", price: "120€", date: "20 juillet 2022" },
+  { pays: "Allemagne", name: "Berlin", price: "130€", date: "30 août 2022" },
+  {
+    pays: "Danemark",
+    name: "Amsterdam",
+    price: "140€",
+    date: "25 septembre 2022",
+  },
+  { pays: "Italie", name: "Rome", price: "160€", date: "5 juillet 2022" },
+  { pays: "Pologne", name: "Varsovie", price: "110€", date: "5 octobre 2022" },
+  { pays: "Suisse", name: "Berne", price: "180€", date: "20 octobre 2022" },
 ];
 
 function Searchscreen() {
   const [selectedCountry, setSelectedCountry] = useState("Pays");
-  const [filteredCountries, setFilteredCountries] = useState(countries);
+  const [filteredCountries, setFilteredCountries] = useState(destinations);
+  const [selectedCity, setSelectedCity] = useState("Ville");
 
   const handleChangeCountry = useCallback((e) => {
     setSelectedCountry(e.target.value);
-    const filtered = countries.filter((country) => country === e.target.value);
+    const filtered = destinations.filter(
+      (city) => city.pays === e.target.value
+    );
+    setFilteredCountries(filtered);
+  }, []);
+
+  const handleChangeCity = useCallback((e) => {
+    setSelectedCity(e.target.value);
+    const filtered = destinations.filter(
+      (city) => city.name === e.target.value
+    );
     setFilteredCountries(filtered);
   }, []);
 
   return (
     <Container>
-      <Header />
       <BodyUI>
         <SearchUI>
           <Searchbars>
@@ -91,30 +98,37 @@ function Searchscreen() {
               value={selectedCountry}
               onChange={handleChangeCountry}
             >
-              {countries}
+              {destinations.map((city) => city.pays)}
             </Dropdown>
-            <Dropdown title="Ville">{cities}</Dropdown>
+            <Dropdown
+              title="Ville"
+              value={selectedCity}
+              onChange={handleChangeCity}
+            >
+              {destinations.map((city) => city.name)}
+            </Dropdown>
           </Searchbars>
         </SearchUI>
-        {selectedCountry === "Pays"
-          ? countries.map((country, index) => (
+        {selectedCountry === "Pays" && selectedCity === "Ville"
+          ? destinations.map((city, index) => (
               <Searchrow
                 key={index}
-                country={country}
-                date="Jamais"
-                price="1€"
+                country={city.pays}
+                city={city.name}
+                date={city.date}
+                price={city.price}
               />
             ))
-          : filteredCountries.map((country, index) => (
+          : filteredCountries.map((city, index) => (
               <Searchrow
                 key={index}
-                country={country}
-                date="Jamais"
-                price="1€"
+                country={city.pays}
+                city={city.name}
+                date={city.date}
+                price={city.price}
               />
             ))}
       </BodyUI>
-      <Footer />
     </Container>
   );
 }

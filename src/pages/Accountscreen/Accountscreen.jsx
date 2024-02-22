@@ -1,20 +1,13 @@
 import styled from "styled-components";
-import Header from "../../components/Header";
-import Footer from "../../components/Footer";
 
 const Container = styled.div`
   display: flex;
-  width: 100%;
-  height: 100%;
   flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  background: #fff;
-  gap: 8px;
 `;
 
 const TitleUI = styled.h1`
   font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
 `;
 
 const Settings = styled.div`
@@ -25,39 +18,45 @@ const Settings = styled.div`
 const Options = styled.div`
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  height: 200px;
 `;
 
 const MiddleBar = styled.div`
   width: 1px;
-  height: 100px;
+  height: 200px;
   background: #000000;
 `;
 
 const Details = styled.div`
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  height: 200px;
+`;
+
+const Txt = styled.p`
+  font-family: Arial, Helvetica, sans-serif;
 `;
 
 function Accountscreen() {
   return (
     <Container>
-      <Header />
       <TitleUI>Mon Compte</TitleUI>
       <Settings>
         <Options>
-          <div>Mes informations</div>
-          <div>Reservations</div>
-          <div>Historique</div>
+          <Txt>Mes informations</Txt>
+          <Txt>Reservations</Txt>
+          <Txt>Historique</Txt>
         </Options>
         <MiddleBar />
         <Details>
-          <div>Nom : DRUON</div>
-          <div>Prénom : Aurélien</div>
-          <div>Adresse e-mail : aurelien.druon@mobsuccess.com</div>
-          <div>Date de naissance : 25/01/2005</div>
+          <Txt>Nom : DRUON</Txt>
+          <Txt>Prénom : Aurélien</Txt>
+          <Txt>Adresse e-mail : aurelien.druon@mobsuccess.com</Txt>
+          <Txt>Date de naissance : 25/01/2005</Txt>
         </Details>
       </Settings>
-      <Footer />
     </Container>
   );
 }
