@@ -66,7 +66,7 @@ function Homescreen() {
             Paris
           </Presentation0>
         </Link>
-        <Link to="/details/london">
+        <Link to="/details/londres">
           <Presentation0 img="https://source.unsplash.com/random/240x128">
             Londres
           </Presentation0>
